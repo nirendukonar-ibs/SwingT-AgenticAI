@@ -1,0 +1,50 @@
+{
+  "ticker": "BAJAJ-AUTO",
+  "date_range": {
+    "start": "2025-06-30",
+    "end": "2026-06-25",
+    "rows": 247
+  },
+  "price_stats": {
+    "mean": 9141.85,
+    "std": 658.88,
+    "min": 7896.87,
+    "max": 10658.5,
+    "q25": 8732.36,
+    "median": 8972.72,
+    "q75": 9638.11
+  },
+  "return_stats": {
+    "mean_daily_log_return": 0.000713,
+    "std_daily_log_return": 0.013932,
+    "annualised_return_pct": 17.96,
+    "annualised_volatility_pct": 22.12,
+    "sharpe_ratio": 0.812,
+    "skewness": 0.0982,
+    "kurtosis": 1.0425,
+    "positive_days_pct": 50.8,
+    "observations": 246
+  },
+  "drawdown": {
+    "max_drawdown_pct": -13.37,
+    "peak_date": "2026-02-26",
+    "trough_date": "2026-04-02",
+    "recovery_date": "2026-05-04",
+    "drawdown_days": 35
+  },
+  "volume_stats": {
+    "mean_volume": 361602,
+    "median_volume": 326774,
+    "max_volume": 1498254,
+    "high_volume_days": 11,
+    "high_volume_threshold": 723204
+  },
+  "rolling_snapshot": {
+    "20d_mean": 10134.6,
+    "20d_std": 185.37,
+    "20d_pct_above_ma": -2.88,
+    "50d_mean": 10078.39,
+    "50d_std": 342.08,
+    "50d_pct_above_ma": -2.34
+  }
+}

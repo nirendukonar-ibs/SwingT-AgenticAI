@@ -1,0 +1,58 @@
+{
+  "ticker": "HDFCBANK",
+  "short_name": "HDFC BANK LTD",
+  "sector": "Financial Services",
+  "industry": "Banks - Regional",
+  "currency": "INR",
+  "market_cap_cr": 1225937.0,
+  "fundamental_score": 5.68,
+  "pass": true,
+  "threshold": 5.0,
+  "metric_scores": {
+    "pe": {
+      "value": 17.756,
+      "score": 8.0,
+      "weight": 0.25
+    },
+    "pb": {
+      "value": 2.0908,
+      "score": 7.0,
+      "weight": 0.2
+    },
+    "roe": {
+      "value": 0.1382,
+      "score": 4.0,
+      "weight": 0.3
+    },
+    "revenue_growth": {
+      "value": -0.018,
+      "score": 3.64,
+      "weight": 0.2
+    },
+    "div_yield": {
+      "value": 0.0163,
+      "score": 7.0,
+      "weight": 0.05
+    }
+  },
+  "raw_fundamentals": {
+    "pe": 17.76,
+    "pb": 2.09,
+    "roe_pct": 13.8,
+    "de": null,
+    "revenue_growth_pct": -1.8,
+    "gross_margin_pct": 0.0,
+    "current_ratio": null,
+    "beta": 0.432,
+    "dividend_yield_pct": 1.63,
+    "operating_cashflow_cr": -275233.7
+  },
+  "eda_context": {
+    "ticker": "HDFCBANK",
+    "rows": 247,
+    "annualised_return_pct": -21.48,
+    "annualised_volatility_pct": 19.75,
+    "sharpe_ratio": -1.087,
+    "max_drawdown_pct": -27.78
+  }
+}

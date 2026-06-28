@@ -1,0 +1,11 @@
+SwingTradeIQ DataCollectorAgent
+Date    : 2026-06-28 15:11 IST
+Duration: 6.7s
+
+SUCCEEDED (4):
+  INFY.NS
+  HDFCBANK.NS
+  TCS.NS
+  BAJAJ-AUTO.NS
+
+FAILED (0):

@@ -1,0 +1,9 @@
+SwingTradeIQ ReportAgent
+Date    : 2026-06-28 15:11
+Duration: 0.0s
+
+[15:11:11] ReportAgent — 2026-06-28 15:11
+[15:11:11] HTML: /Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/outputs/report_2026-06-28.html
+[15:11:11] JSON: /Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/outputs/report_2026-06-28.json
+[15:11:11] CSV: /Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/outputs/orders_2026-06-28.csv
+[15:11:11] Done — 0.0s

@@ -1,0 +1,50 @@
+{
+  "ticker": "INFY",
+  "date_range": {
+    "start": "2025-06-30",
+    "end": "2026-06-25",
+    "rows": 247
+  },
+  "price_stats": {
+    "mean": 1391.44,
+    "std": 162.79,
+    "min": 1029.3,
+    "max": 1654.01,
+    "q25": 1251.62,
+    "median": 1436.35,
+    "q75": 1525.75
+  },
+  "return_stats": {
+    "mean_daily_log_return": -0.001602,
+    "std_daily_log_return": 0.017711,
+    "annualised_return_pct": -40.38,
+    "annualised_volatility_pct": 28.12,
+    "sharpe_ratio": -1.436,
+    "skewness": -0.4086,
+    "kurtosis": 3.4087,
+    "positive_days_pct": 44.7,
+    "observations": 246
+  },
+  "drawdown": {
+    "max_drawdown_pct": -37.77,
+    "peak_date": "2026-01-16",
+    "trough_date": "2026-06-23",
+    "recovery_date": null,
+    "drawdown_days": 158
+  },
+  "volume_stats": {
+    "mean_volume": 10477512,
+    "median_volume": 8631711,
+    "max_volume": 69085430,
+    "high_volume_days": 13,
+    "high_volume_threshold": 20955025
+  },
+  "rolling_snapshot": {
+    "20d_mean": 1130.18,
+    "20d_std": 56.5,
+    "20d_pct_above_ma": -7.87,
+    "50d_mean": 1147.36,
+    "50d_std": 55.98,
+    "50d_pct_above_ma": -9.25
+  }
+}

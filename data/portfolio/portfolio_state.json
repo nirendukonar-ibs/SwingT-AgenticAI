@@ -1,0 +1,133 @@
+{
+  "run_at": "2026-06-28T15:11:11.525395",
+  "capital": 200000,
+  "selected_count": 3,
+  "candidates": 4,
+  "capital_table": {
+    "capital": 200000,
+    "total_deployed": 51474.9,
+    "deployed_pct": 25.74,
+    "remaining_cash": 148525.1,
+    "cash_pct": 74.26,
+    "total_risk": 2565.99,
+    "risk_pct": 1.283,
+    "sector_allocation": {
+      "Financial Services": {
+        "value": 15129.7,
+        "pct": 7.56,
+        "breach": false
+      },
+      "Consumer Cyclical": {
+        "value": 19686.0,
+        "pct": 9.84,
+        "breach": false
+      },
+      "Technology": {
+        "value": 16659.2,
+        "pct": 8.33,
+        "breach": false
+      }
+    }
+  },
+  "positions": [
+    {
+      "ticker": "HDFCBANK",
+      "signal": "SWING_BUY",
+      "conviction": "MEDIUM",
+      "combined_score": 6.71,
+      "fund_score": 5.68,
+      "tech_score": 7.4,
+      "risk_decision": "APPROVED_REDUCED",
+      "sizing_basis": "kelly_constrained",
+      "final": {
+        "shares": 19,
+        "entry_price": 796.3,
+        "stop_loss": 764.85,
+        "position_value_inr": 15129.7,
+        "position_pct_capital": 7.56,
+        "capital_at_risk_inr": 597.55,
+        "capital_at_risk_pct": 0.299,
+        "target_1": 859.2,
+        "target_2": 890.66,
+        "risk_reward": 2.0,
+        "sector": "Financial Services",
+        "beta": 0.432
+      },
+      "kelly": {
+        "win_rate": 0.439,
+        "has_edge": true,
+        "kelly_hist": -0.0976,
+        "kelly_trade": 0.1585,
+        "kelly_fraction": 0.5,
+        "kelly_shares": 19,
+        "kelly_applied_pct": 7.92
+      }
+    },
+    {
+      "ticker": "BAJAJ-AUTO",
+      "signal": "WATCH",
+      "conviction": "MEDIUM",
+      "combined_score": 4.57,
+      "fund_score": 5.65,
+      "tech_score": 3.85,
+      "risk_decision": "APPROVED",
+      "sizing_basis": "kelly_constrained",
+      "final": {
+        "shares": 2,
+        "entry_price": 9843.0,
+        "stop_loss": 9412.7,
+        "position_value_inr": 19686.0,
+        "position_pct_capital": 9.84,
+        "capital_at_risk_inr": 860.6,
+        "capital_at_risk_pct": 0.43,
+        "target_1": 10703.59,
+        "target_2": 11133.89,
+        "risk_reward": 2.0,
+        "sector": "Consumer Cyclical",
+        "beta": 0.681
+      },
+      "kelly": {
+        "win_rate": 0.5081,
+        "has_edge": true,
+        "kelly_hist": 0.0611,
+        "kelly_trade": 0.2622,
+        "kelly_fraction": 0.5,
+        "kelly_shares": 2,
+        "kelly_applied_pct": 13.11
+      }
+    },
+    {
+      "ticker": "INFY",
+      "signal": "WATCH",
+      "conviction": "LOW",
+      "combined_score": 4.5,
+      "fund_score": 7.95,
+      "tech_score": 2.2,
+      "risk_decision": "APPROVED_REDUCED",
+      "sizing_basis": "kelly_constrained",
+      "final": {
+        "shares": 16,
+        "entry_price": 1041.2,
+        "stop_loss": 971.96,
+        "position_value_inr": 16659.2,
+        "position_pct_capital": 8.33,
+        "capital_at_risk_inr": 1107.84,
+        "capital_at_risk_pct": 0.554,
+        "target_1": 1179.69,
+        "target_2": 1248.93,
+        "risk_reward": 2.0,
+        "sector": "Technology",
+        "beta": 0.109
+      },
+      "kelly": {
+        "win_rate": 0.4472,
+        "has_edge": true,
+        "kelly_hist": -0.1349,
+        "kelly_trade": 0.1707,
+        "kelly_fraction": 0.5,
+        "kelly_shares": 16,
+        "kelly_applied_pct": 8.54
+      }
+    }
+  ]
+}

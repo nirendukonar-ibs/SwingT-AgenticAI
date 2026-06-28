@@ -1,0 +1,94 @@
+{
+  "ticker": "BAJAJ-AUTO",
+  "as_of_date": "2026-06-25",
+  "technical_score": 3.85,
+  "signal": "SELL",
+  "snapshot": {
+    "price": 9843.0,
+    "sma20": 10134.6,
+    "sma50": 10078.39,
+    "sma200": 9341.83,
+    "ema12": 10022.64,
+    "ema26": 10086.24,
+    "rsi14": 40.9,
+    "stoch_k": 18.1,
+    "stoch_d": 14.3,
+    "atr14": 215.15,
+    "atr_pct": 2.19
+  },
+  "52w": {
+    "high": 10750.0,
+    "low": 7749.44,
+    "pct_from_high": -8.4,
+    "pct_from_low": 27.0
+  },
+  "components": {
+    "ma_trend": {
+      "score": 5.0,
+      "weight": 0.25,
+      "detail": {
+        "vs_sma20": "below",
+        "vs_sma50": "below",
+        "vs_sma200": "above",
+        "sma50_vs_sma200": "golden",
+        "score": 5.0
+      }
+    },
+    "rsi": {
+      "score": 5.0,
+      "weight": 0.2,
+      "detail": {
+        "rsi": 40.9,
+        "zone": "neutral",
+        "score": 5.0
+      }
+    },
+    "macd": {
+      "score": 2.0,
+      "weight": 0.2,
+      "detail": {
+        "macd": -63.6032,
+        "signal": -15.9398,
+        "histogram": -47.6634,
+        "cross": "bearish",
+        "macd_above_zero": "False",
+        "score": 2.0
+      }
+    },
+    "bollinger": {
+      "score": 4.0,
+      "weight": 0.15,
+      "detail": {
+        "bb_pct": 0.097,
+        "bb_upper": 10495.95,
+        "bb_mid": 10134.6,
+        "bb_lower": 9773.25,
+        "zone": "lower_zone",
+        "score": 4.0
+      }
+    },
+    "adx": {
+      "score": 5.0,
+      "weight": 0.1,
+      "detail": {
+        "adx": 17.1,
+        "plus_di": 15.7,
+        "minus_di": 26.0,
+        "strength": "weak",
+        "direction": "down",
+        "score": 5.0
+      }
+    },
+    "volume_obv": {
+      "score": 1.0,
+      "weight": 0.1,
+      "detail": {
+        "obv_current": 5496304,
+        "obv_20d_ago": 8314142,
+        "slope_20d": -0.3389,
+        "trend": "strong_distribution",
+        "score": 1.0
+      }
+    }
+  }
+}

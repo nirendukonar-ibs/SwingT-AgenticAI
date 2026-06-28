@@ -1,0 +1,7 @@
+SwingTradeIQ PortfolioManagerAgent
+Date    : 2026-06-28 15:11
+Duration: 0.0s
+
+[15:11:11] PortfolioManagerAgent — 4 positions, capital=₹200,000
+[15:11:11] Selected 3/4 positions
+[15:11:11] Done — 0.0s  selected=3

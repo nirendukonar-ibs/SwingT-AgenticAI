@@ -1,0 +1,45 @@
+{
+  "run_at": "2026-06-28T15:11:11.470078",
+  "tickers": [
+    "BAJAJ-AUTO",
+    "HDFCBANK",
+    "INFY",
+    "TCS"
+  ],
+  "failed": [],
+  "elapsed_s": 0.0,
+  "per_ticker": [
+    {
+      "ticker": "BAJAJ-AUTO",
+      "rows": 247,
+      "annualised_return_pct": 17.96,
+      "annualised_volatility_pct": 22.12,
+      "sharpe_ratio": 0.812,
+      "max_drawdown_pct": -13.37
+    },
+    {
+      "ticker": "HDFCBANK",
+      "rows": 247,
+      "annualised_return_pct": -21.48,
+      "annualised_volatility_pct": 19.75,
+      "sharpe_ratio": -1.087,
+      "max_drawdown_pct": -27.78
+    },
+    {
+      "ticker": "INFY",
+      "rows": 247,
+      "annualised_return_pct": -40.38,
+      "annualised_volatility_pct": 28.12,
+      "sharpe_ratio": -1.436,
+      "max_drawdown_pct": -37.77
+    },
+    {
+      "ticker": "TCS",
+      "rows": 247,
+      "annualised_return_pct": -47.52,
+      "annualised_volatility_pct": 25.32,
+      "sharpe_ratio": -1.877,
+      "max_drawdown_pct": -38.17
+    }
+  ]
+}

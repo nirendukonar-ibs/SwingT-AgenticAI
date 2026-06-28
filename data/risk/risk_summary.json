@@ -1,0 +1,79 @@
+{
+  "run_at": "2026-06-28T15:11:11.518946",
+  "capital": 200000,
+  "total_tickers": 4,
+  "portfolio": {
+    "approved_count": 3,
+    "total_risk_deployed_inr": 9250.0,
+    "total_risk_deployed_pct": 4.62,
+    "beta_weighted_exposure": 47644.12,
+    "sector_exposure_pct": {
+      "Consumer Cyclical": 19.69,
+      "Financial Services": 19.91,
+      "Technology": 16.66
+    },
+    "sector_breaches": {},
+    "max_sector_limit_pct": 30.0
+  },
+  "ranking": [
+    {
+      "ticker": "HDFCBANK",
+      "signal": "SWING_BUY",
+      "risk_decision": "APPROVED_REDUCED",
+      "risk_score": 4.9,
+      "risk_flags": [
+        "NEGATIVE_SHARPE(-1.09\u2192-25%size)"
+      ],
+      "shares": 50,
+      "position_value": 39815.0,
+      "var_inr": 767.59,
+      "cvar_inr": 1132.73,
+      "sector": "Financial Services",
+      "beta": 0.432
+    },
+    {
+      "ticker": "BAJAJ-AUTO",
+      "signal": "WATCH",
+      "risk_decision": "APPROVED",
+      "risk_score": 5.0,
+      "risk_flags": [],
+      "shares": 4,
+      "position_value": 39372.0,
+      "var_inr": 775.49,
+      "cvar_inr": 1135.46,
+      "sector": "Consumer Cyclical",
+      "beta": 0.681
+    },
+    {
+      "ticker": "INFY",
+      "signal": "WATCH",
+      "risk_decision": "APPROVED_REDUCED",
+      "risk_score": 5.9,
+      "risk_flags": [
+        "DRAWDOWN_HIGH(-37.8%\u2192-25%size)",
+        "NEGATIVE_SHARPE(-1.44\u2192-25%size)"
+      ],
+      "shares": 32,
+      "position_value": 33318.4,
+      "var_inr": 892.29,
+      "cvar_inr": 1480.14,
+      "sector": "Technology",
+      "beta": 0.109
+    },
+    {
+      "ticker": "TCS",
+      "signal": "NO_TRADE",
+      "risk_decision": "REJECTED",
+      "risk_score": null,
+      "risk_flags": [
+        "NO_TRADE"
+      ],
+      "shares": null,
+      "position_value": null,
+      "var_inr": null,
+      "cvar_inr": null,
+      "sector": null,
+      "beta": null
+    }
+  ]
+}

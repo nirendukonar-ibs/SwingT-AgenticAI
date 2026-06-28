@@ -1,0 +1,20 @@
+{
+  "run_at": "2026-06-28T15:11:11.525395",
+  "tickers": [
+    "HDFCBANK",
+    "BAJAJ-AUTO",
+    "INFY"
+  ],
+  "weights_pct": {
+    "HDFCBANK": 7.56,
+    "BAJAJ-AUTO": 9.84,
+    "INFY": 8.33
+  },
+  "portfolio_expected_return_pct": -3.22,
+  "portfolio_volatility_pct": 4.14,
+  "portfolio_sharpe": -0.778,
+  "portfolio_beta": 0.109,
+  "diversification_ratio": 1.453,
+  "total_position_var_inr": 2435.37,
+  "note_correlation_used": true
+}

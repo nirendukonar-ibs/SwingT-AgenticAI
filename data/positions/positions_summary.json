@@ -1,0 +1,93 @@
+{
+  "run_at": "2026-06-28T15:11:11.522786",
+  "portfolio": {
+    "capital": 200000,
+    "total_deployed_inr": 51474.9,
+    "total_deployed_pct": 25.74,
+    "remaining_cash_inr": 148525.1,
+    "portfolio_utilisation_pct": 25.74,
+    "total_risk_inr": 2565.99,
+    "total_risk_pct": 1.283,
+    "beta_weighted_exposure": 21758.05,
+    "active_positions": 3,
+    "sector_breakdown": {
+      "Consumer Cyclical": {
+        "pct": 9.84,
+        "tickers": [
+          "BAJAJ-AUTO"
+        ]
+      },
+      "Financial Services": {
+        "pct": 7.56,
+        "tickers": [
+          "HDFCBANK"
+        ]
+      },
+      "Technology": {
+        "pct": 8.33,
+        "tickers": [
+          "INFY"
+        ]
+      }
+    },
+    "sector_breaches": {}
+  },
+  "positions": [
+    {
+      "ticker": "BAJAJ-AUTO",
+      "signal": "WATCH",
+      "risk_decision": "APPROVED",
+      "sizing_basis": "kelly_constrained",
+      "binding": "kelly",
+      "kelly_trade": 0.2622,
+      "kelly_shares": 2,
+      "final_shares": 2,
+      "position_value": 19686.0,
+      "risk_inr": 860.6,
+      "risk_pct": 0.43,
+      "sector": "Consumer Cyclical"
+    },
+    {
+      "ticker": "HDFCBANK",
+      "signal": "SWING_BUY",
+      "risk_decision": "APPROVED_REDUCED",
+      "sizing_basis": "kelly_constrained",
+      "binding": "kelly",
+      "kelly_trade": 0.1585,
+      "kelly_shares": 19,
+      "final_shares": 19,
+      "position_value": 15129.7,
+      "risk_inr": 597.55,
+      "risk_pct": 0.299,
+      "sector": "Financial Services"
+    },
+    {
+      "ticker": "INFY",
+      "signal": "WATCH",
+      "risk_decision": "APPROVED_REDUCED",
+      "sizing_basis": "kelly_constrained",
+      "binding": "kelly",
+      "kelly_trade": 0.1707,
+      "kelly_shares": 16,
+      "final_shares": 16,
+      "position_value": 16659.2,
+      "risk_inr": 1107.84,
+      "risk_pct": 0.554,
+      "sector": "Technology"
+    },
+    {
+      "ticker": "TCS",
+      "signal": "NO_TRADE",
+      "risk_decision": "REJECTED",
+      "sizing_basis": "rejected",
+      "binding": null,
+      "kelly_trade": null,
+      "kelly_shares": null,
+      "final_shares": 0,
+      "position_value": 0,
+      "risk_inr": 0,
+      "risk_pct": 0,
+      "sector": null
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "ticker": "INFY",
+  "signal": "WATCH",
+  "risk_decision": "APPROVED_REDUCED",
+  "sizing_basis": "kelly_constrained",
+  "binding_constraint": "kelly",
+  "kelly": {
+    "n_days": 246,
+    "win_rate": 0.4472,
+    "loss_rate": 0.5528,
+    "avg_win_pct": 1.227,
+    "avg_loss_pct": 1.292,
+    "hist_odds_ratio": 0.9498,
+    "trade_rr_ratio": 2.0,
+    "edge_threshold": 0.3333,
+    "has_edge": true,
+    "kelly_hist": -0.1349,
+    "kelly_trade": 0.1707,
+    "kelly_fraction": 0.5,
+    "kelly_capital_inr": 17070.0,
+    "kelly_shares": 16,
+    "kelly_applied_pct": 8.54
+  },
+  "risk_budget": {
+    "shares": 32,
+    "position_value": 33318.4,
+    "size_multiplier": 0.562
+  },
+  "final": {
+    "shares": 16,
+    "entry_price": 1041.2,
+    "stop_loss": 971.96,
+    "position_value_inr": 16659.2,
+    "position_pct_capital": 8.33,
+    "capital_at_risk_inr": 1107.84,
+    "capital_at_risk_pct": 0.554,
+    "target_1": 1179.69,
+    "target_2": 1248.93,
+    "risk_reward": 2.0,
+    "sector": "Technology",
+    "beta": 0.109
+  }
+}

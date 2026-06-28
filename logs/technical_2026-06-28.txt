@@ -1,0 +1,10 @@
+SwingTradeIQ TechnicalAgent
+Date    : 2026-06-28 15:11
+Duration: 0.0s
+
+[15:11:11] TechnicalAgent — 4 tickers
+[15:11:11] BAJAJ-AUTO: score=3.85 signal=SELL
+[15:11:11] HDFCBANK: score=7.4 signal=BUY
+[15:11:11] INFY: score=2.2 signal=STRONG_SELL
+[15:11:11] TCS: score=2.35 signal=STRONG_SELL
+[15:11:11] Done — 4 ok, 0 failed, 0.0s

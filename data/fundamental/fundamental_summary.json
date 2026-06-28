@@ -1,0 +1,67 @@
+{
+  "run_at": "2026-06-28T15:11:11.472255",
+  "threshold": 5.0,
+  "total": 4,
+  "passed": [
+    "INFY",
+    "HDFCBANK",
+    "TCS",
+    "BAJAJ-AUTO"
+  ],
+  "failed_filter": [],
+  "errored": [],
+  "ranking": [
+    {
+      "rank": 1,
+      "ticker": "INFY",
+      "sector": "Technology",
+      "fundamental_score": 7.95,
+      "pass": true,
+      "pe": 13.7,
+      "pb": 4.55,
+      "roe_pct": 31.4,
+      "de": 9.83,
+      "revenue_growth_pct": 6.6,
+      "market_cap_cr": 422263.0
+    },
+    {
+      "rank": 2,
+      "ticker": "TCS",
+      "sector": "Technology",
+      "fundamental_score": 7.45,
+      "pass": true,
+      "pe": 15.42,
+      "pb": 7.07,
+      "roe_pct": 48.4,
+      "de": 10.39,
+      "revenue_growth_pct": 9.6,
+      "market_cap_cr": 758315.0
+    },
+    {
+      "rank": 3,
+      "ticker": "HDFCBANK",
+      "sector": "Financial Services",
+      "fundamental_score": 5.68,
+      "pass": true,
+      "pe": 17.76,
+      "pb": 2.09,
+      "roe_pct": 13.8,
+      "de": null,
+      "revenue_growth_pct": -1.8,
+      "market_cap_cr": 1225937.0
+    },
+    {
+      "rank": 4,
+      "ticker": "BAJAJ-AUTO",
+      "sector": "Consumer Cyclical",
+      "fundamental_score": 5.65,
+      "pass": true,
+      "pe": 25.59,
+      "pb": 7.09,
+      "roe_pct": 28.0,
+      "de": 56.35,
+      "revenue_growth_pct": 37.0,
+      "market_cap_cr": 275083.0
+    }
+  ]
+}

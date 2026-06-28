@@ -1,0 +1,102 @@
+{
+  "run_at": "2026-06-28T15:11:11.499216",
+  "total": 4,
+  "ranking": [
+    {
+      "rank": 1,
+      "ticker": "HDFCBANK",
+      "technical_score": 7.4,
+      "signal": "BUY",
+      "rsi14": 64.4,
+      "atr_pct": 1.97,
+      "pct_from_52w_high": -20.7,
+      "ma_trend": {
+        "vs_sma20": "above",
+        "vs_sma50": "above",
+        "vs_sma200": "below",
+        "sma50_vs_sma200": "death",
+        "score": 5.0
+      },
+      "adx": {
+        "adx": 22.0,
+        "plus_di": 29.0,
+        "minus_di": 15.9,
+        "strength": "moderate",
+        "direction": "up",
+        "score": 6.0
+      }
+    },
+    {
+      "rank": 2,
+      "ticker": "BAJAJ-AUTO",
+      "technical_score": 3.85,
+      "signal": "SELL",
+      "rsi14": 40.9,
+      "atr_pct": 2.19,
+      "pct_from_52w_high": -8.4,
+      "ma_trend": {
+        "vs_sma20": "below",
+        "vs_sma50": "below",
+        "vs_sma200": "above",
+        "sma50_vs_sma200": "golden",
+        "score": 5.0
+      },
+      "adx": {
+        "adx": 17.1,
+        "plus_di": 15.7,
+        "minus_di": 26.0,
+        "strength": "weak",
+        "direction": "down",
+        "score": 5.0
+      }
+    },
+    {
+      "rank": 3,
+      "ticker": "TCS",
+      "technical_score": 2.35,
+      "signal": "STRONG_SELL",
+      "rsi14": 37.8,
+      "atr_pct": 2.9,
+      "pct_from_52w_high": -37.6,
+      "ma_trend": {
+        "vs_sma20": "below",
+        "vs_sma50": "below",
+        "vs_sma200": "below",
+        "sma50_vs_sma200": "death",
+        "score": 0.0
+      },
+      "adx": {
+        "adx": 18.6,
+        "plus_di": 20.3,
+        "minus_di": 33.1,
+        "strength": "weak",
+        "direction": "down",
+        "score": 5.0
+      }
+    },
+    {
+      "rank": 4,
+      "ticker": "INFY",
+      "technical_score": 2.2,
+      "signal": "STRONG_SELL",
+      "rsi14": 36.1,
+      "atr_pct": 3.33,
+      "pct_from_52w_high": -38.4,
+      "ma_trend": {
+        "vs_sma20": "below",
+        "vs_sma50": "below",
+        "vs_sma200": "below",
+        "sma50_vs_sma200": "death",
+        "score": 0.0
+      },
+      "adx": {
+        "adx": 18.9,
+        "plus_di": 20.3,
+        "minus_di": 35.8,
+        "strength": "weak",
+        "direction": "down",
+        "score": 5.0
+      }
+    }
+  ]
+}

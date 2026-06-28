@@ -1,0 +1,68 @@
+{
+  "ticker": "TCS",
+  "short_name": "TATA CONSULTANCY SERV LT",
+  "sector": "Technology",
+  "industry": "Information Technology Services",
+  "currency": "INR",
+  "market_cap_cr": 758315.0,
+  "fundamental_score": 7.45,
+  "pass": true,
+  "threshold": 5.0,
+  "metric_scores": {
+    "pe": {
+      "value": 15.4167,
+      "score": 7.0,
+      "weight": 0.2
+    },
+    "pb": {
+      "value": 7.0712,
+      "score": 3.0,
+      "weight": 0.15
+    },
+    "roe": {
+      "value": 0.484,
+      "score": 10.0,
+      "weight": 0.2
+    },
+    "de": {
+      "value": 10.389,
+      "score": 8.0,
+      "weight": 0.15
+    },
+    "revenue_growth": {
+      "value": 0.096,
+      "score": 6.0,
+      "weight": 0.15
+    },
+    "gross_margin": {
+      "value": 0.4031,
+      "score": 10.0,
+      "weight": 0.1
+    },
+    "current_ratio": {
+      "value": 2.228,
+      "score": 10.0,
+      "weight": 0.05
+    }
+  },
+  "raw_fundamentals": {
+    "pe": 15.42,
+    "pb": 7.07,
+    "roe_pct": 48.4,
+    "de": 10.39,
+    "revenue_growth_pct": 9.6,
+    "gross_margin_pct": 40.3,
+    "current_ratio": 2.23,
+    "beta": 0.227,
+    "dividend_yield_pct": 5.92,
+    "operating_cashflow_cr": 52094.0
+  },
+  "eda_context": {
+    "ticker": "TCS",
+    "rows": 247,
+    "annualised_return_pct": -47.52,
+    "annualised_volatility_pct": 25.32,
+    "sharpe_ratio": -1.877,
+    "max_drawdown_pct": -38.17
+  }
+}

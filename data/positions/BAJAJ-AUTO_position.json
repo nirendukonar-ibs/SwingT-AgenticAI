@@ -1,0 +1,43 @@
+{
+  "ticker": "BAJAJ-AUTO",
+  "signal": "WATCH",
+  "risk_decision": "APPROVED",
+  "sizing_basis": "kelly_constrained",
+  "binding_constraint": "kelly",
+  "kelly": {
+    "n_days": 246,
+    "win_rate": 0.5081,
+    "loss_rate": 0.4919,
+    "avg_win_pct": 1.123,
+    "avg_loss_pct": 1.02,
+    "hist_odds_ratio": 1.1002,
+    "trade_rr_ratio": 2.0,
+    "edge_threshold": 0.3333,
+    "has_edge": true,
+    "kelly_hist": 0.0611,
+    "kelly_trade": 0.2622,
+    "kelly_fraction": 0.5,
+    "kelly_capital_inr": 26220.0,
+    "kelly_shares": 2,
+    "kelly_applied_pct": 13.11
+  },
+  "risk_budget": {
+    "shares": 4,
+    "position_value": 39372.0,
+    "size_multiplier": 1.0
+  },
+  "final": {
+    "shares": 2,
+    "entry_price": 9843.0,
+    "stop_loss": 9412.7,
+    "position_value_inr": 19686.0,
+    "position_pct_capital": 9.84,
+    "capital_at_risk_inr": 860.6,
+    "capital_at_risk_pct": 0.43,
+    "target_1": 10703.59,
+    "target_2": 11133.89,
+    "risk_reward": 2.0,
+    "sector": "Consumer Cyclical",
+    "beta": 0.681
+  }
+}

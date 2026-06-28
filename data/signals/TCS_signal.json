@@ -1,0 +1,24 @@
+{
+  "ticker": "TCS",
+  "as_of_date": "2026-06-25",
+  "signal": "NO_TRADE",
+  "conviction": null,
+  "patterns": [
+    "MACD_BEAR_CROSS"
+  ],
+  "combined_score": 4.39,
+  "scores": {
+    "technical": 2.35,
+    "fundamental": 7.45,
+    "combined": 4.39
+  },
+  "tech_signal": "STRONG_SELL",
+  "fund_pass": true,
+  "trade_levels": null,
+  "snapshot": {
+    "price": 2094.7,
+    "atr14": 60.8,
+    "atr_pct": 2.9,
+    "rsi14": 37.8
+  }
+}

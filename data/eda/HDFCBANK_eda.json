@@ -1,0 +1,50 @@
+{
+  "ticker": "HDFCBANK",
+  "date_range": {
+    "start": "2025-06-30",
+    "end": "2026-06-25",
+    "rows": 247
+  },
+  "price_stats": {
+    "mean": 898.83,
+    "std": 91.74,
+    "min": 719.65,
+    "max": 996.42,
+    "q25": 794.75,
+    "median": 937.59,
+    "q75": 975.56
+  },
+  "return_stats": {
+    "mean_daily_log_return": -0.000852,
+    "std_daily_log_return": 0.012441,
+    "annualised_return_pct": -21.48,
+    "annualised_volatility_pct": 19.75,
+    "sharpe_ratio": -1.087,
+    "skewness": 0.0204,
+    "kurtosis": 3.5433,
+    "positive_days_pct": 43.9,
+    "observations": 246
+  },
+  "drawdown": {
+    "max_drawdown_pct": -27.78,
+    "peak_date": "2025-07-30",
+    "trough_date": "2026-03-30",
+    "recovery_date": null,
+    "drawdown_days": 243
+  },
+  "volume_stats": {
+    "mean_volume": 27910006,
+    "median_volume": 23221330,
+    "max_volume": 171637393,
+    "high_volume_days": 12,
+    "high_volume_threshold": 55820012
+  },
+  "rolling_snapshot": {
+    "20d_mean": 756.24,
+    "20d_std": 24.74,
+    "20d_pct_above_ma": 5.3,
+    "50d_mean": 760.85,
+    "50d_std": 19.91,
+    "50d_pct_above_ma": 4.66
+  }
+}

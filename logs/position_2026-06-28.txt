@@ -1,0 +1,9 @@
+SwingTradeIQ PositionSizerAgent
+Date    : 2026-06-28 15:11
+Duration: 0.0s
+
+[15:11:11] PositionSizerAgent — 4 tickers  capital=₹200,000  kelly_fraction=0.5
+[15:11:11] BAJAJ-AUTO: shares=2 pos=₹19686.0 binding=kelly kelly_trade=0.2622
+[15:11:11] HDFCBANK: shares=19 pos=₹15129.7 binding=kelly kelly_trade=0.1585
+[15:11:11] INFY: shares=16 pos=₹16659.2 binding=kelly kelly_trade=0.1707
+[15:11:11] Done — 0.0s

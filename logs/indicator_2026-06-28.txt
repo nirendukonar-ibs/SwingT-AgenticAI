@@ -1,0 +1,10 @@
+SwingTradeIQ IndicatorEngine
+Date    : 2026-06-28 15:11
+Duration: 0.0s
+
+[15:11:11] IndicatorEngine — 4 tickers
+[15:11:11] BAJAJ-AUTO: WATCH score=4.57 patterns=['BB_LOWER_TOUCH']
+[15:11:11] HDFCBANK: SWING_BUY score=6.71 patterns=[]
+[15:11:11] INFY: WATCH score=4.5 patterns=[]
+[15:11:11] TCS: NO_TRADE score=4.39 patterns=['MACD_BEAR_CROSS']
+[15:11:11] Done — 1 SWING_BUY, 2 WATCH, 1 NO_TRADE, 0.0s

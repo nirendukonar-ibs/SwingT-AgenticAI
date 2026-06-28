@@ -1,0 +1,43 @@
+{
+  "ticker": "HDFCBANK",
+  "signal": "SWING_BUY",
+  "risk_decision": "APPROVED_REDUCED",
+  "sizing_basis": "kelly_constrained",
+  "binding_constraint": "kelly",
+  "kelly": {
+    "n_days": 246,
+    "win_rate": 0.439,
+    "loss_rate": 0.561,
+    "avg_win_pct": 0.902,
+    "avg_loss_pct": 0.862,
+    "hist_odds_ratio": 1.0454,
+    "trade_rr_ratio": 2.0,
+    "edge_threshold": 0.3333,
+    "has_edge": true,
+    "kelly_hist": -0.0976,
+    "kelly_trade": 0.1585,
+    "kelly_fraction": 0.5,
+    "kelly_capital_inr": 15850.0,
+    "kelly_shares": 19,
+    "kelly_applied_pct": 7.92
+  },
+  "risk_budget": {
+    "shares": 50,
+    "position_value": 39815.0,
+    "size_multiplier": 0.75
+  },
+  "final": {
+    "shares": 19,
+    "entry_price": 796.3,
+    "stop_loss": 764.85,
+    "position_value_inr": 15129.7,
+    "position_pct_capital": 7.56,
+    "capital_at_risk_inr": 597.55,
+    "capital_at_risk_pct": 0.299,
+    "target_1": 859.2,
+    "target_2": 890.66,
+    "risk_reward": 2.0,
+    "sector": "Financial Services",
+    "beta": 0.432
+  }
+}

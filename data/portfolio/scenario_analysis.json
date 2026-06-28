@@ -1,0 +1,41 @@
+{
+  "run_at": "2026-06-28T15:11:11.525395",
+  "per_position": [
+    {
+      "ticker": "HDFCBANK",
+      "shares": 19,
+      "bear_pnl": -597.55,
+      "bull_t1_pnl": 1195.1,
+      "bull_t2_pnl": 1792.84,
+      "expected_value": 189.42,
+      "win_rate_used": 0.439
+    },
+    {
+      "ticker": "BAJAJ-AUTO",
+      "shares": 2,
+      "bear_pnl": -860.6,
+      "bull_t1_pnl": 1721.18,
+      "bull_t2_pnl": 2581.78,
+      "expected_value": 451.2,
+      "win_rate_used": 0.5081
+    },
+    {
+      "ticker": "INFY",
+      "shares": 16,
+      "bear_pnl": -1107.84,
+      "bull_t1_pnl": 2215.84,
+      "bull_t2_pnl": 3323.68,
+      "expected_value": 378.51,
+      "win_rate_used": 0.4472
+    }
+  ],
+  "portfolio": {
+    "bear_total_pnl": -2565.99,
+    "bear_pnl_pct": -1.28,
+    "bull_t1_total_pnl": 5132.12,
+    "bull_t1_pnl_pct": 2.57,
+    "bull_t2_total_pnl": 7698.3,
+    "bull_t2_pnl_pct": 3.85,
+    "total_expected_value": 1019.13
+  }
+}

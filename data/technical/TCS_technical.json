@@ -1,0 +1,94 @@
+{
+  "ticker": "TCS",
+  "as_of_date": "2026-06-25",
+  "technical_score": 2.35,
+  "signal": "STRONG_SELL",
+  "snapshot": {
+    "price": 2094.7,
+    "sma20": 2187.07,
+    "sma50": 2294.94,
+    "sma200": 2733.87,
+    "ema12": 2145.25,
+    "ema26": 2199.3,
+    "rsi14": 37.8,
+    "stoch_k": 22.6,
+    "stoch_d": 16.5,
+    "atr14": 60.8,
+    "atr_pct": 2.9
+  },
+  "52w": {
+    "high": 3357.78,
+    "low": 2055.0,
+    "pct_from_high": -37.6,
+    "pct_from_low": 1.9
+  },
+  "components": {
+    "ma_trend": {
+      "score": 0.0,
+      "weight": 0.25,
+      "detail": {
+        "vs_sma20": "below",
+        "vs_sma50": "below",
+        "vs_sma200": "below",
+        "sma50_vs_sma200": "death",
+        "score": 0.0
+      }
+    },
+    "rsi": {
+      "score": 3.0,
+      "weight": 0.2,
+      "detail": {
+        "rsi": 37.8,
+        "zone": "bearish",
+        "score": 3.0
+      }
+    },
+    "macd": {
+      "score": 2.0,
+      "weight": 0.2,
+      "detail": {
+        "macd": -54.0483,
+        "signal": -49.789,
+        "histogram": -4.2594,
+        "cross": "bearish",
+        "macd_above_zero": "False",
+        "score": 2.0
+      }
+    },
+    "bollinger": {
+      "score": 5.0,
+      "weight": 0.15,
+      "detail": {
+        "bb_pct": 0.222,
+        "bb_upper": 2353.46,
+        "bb_mid": 2187.07,
+        "bb_lower": 2020.69,
+        "zone": "below_mid",
+        "score": 5.0
+      }
+    },
+    "adx": {
+      "score": 5.0,
+      "weight": 0.1,
+      "detail": {
+        "adx": 18.6,
+        "plus_di": 20.3,
+        "minus_di": 33.1,
+        "strength": "weak",
+        "direction": "down",
+        "score": 5.0
+      }
+    },
+    "volume_obv": {
+      "score": 1.0,
+      "weight": 0.1,
+      "detail": {
+        "obv_current": -185348371,
+        "obv_20d_ago": -160262693,
+        "slope_20d": -0.1565,
+        "trend": "strong_distribution",
+        "score": 1.0
+      }
+    }
+  }
+}

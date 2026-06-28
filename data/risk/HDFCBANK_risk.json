@@ -1,0 +1,86 @@
+{
+  "ticker": "HDFCBANK",
+  "signal": "SWING_BUY",
+  "risk_decision": "APPROVED_REDUCED",
+  "risk_flags": [
+    "NEGATIVE_SHARPE(-1.09\u2192-25%size)"
+  ],
+  "risk_score": 4.9,
+  "risk_score_breakdown": {
+    "volatility": {
+      "score": 4.0,
+      "weight": 0.25
+    },
+    "drawdown": {
+      "score": 6.0,
+      "weight": 0.25
+    },
+    "tail_risk": {
+      "score": 6.0,
+      "weight": 0.2
+    },
+    "price_vol": {
+      "score": 4.0,
+      "weight": 0.15
+    },
+    "market_beta": {
+      "score": 4.0,
+      "weight": 0.15
+    }
+  },
+  "risk_checks": {
+    "rr_ratio": {
+      "value": 2.0,
+      "threshold": 1.5,
+      "pass": true
+    },
+    "max_drawdown": {
+      "value": -27.78,
+      "threshold": -50.0,
+      "pass": true
+    },
+    "atr_pct": {
+      "value": 1.97,
+      "threshold": 8.0,
+      "pass": true
+    },
+    "sharpe_ratio": {
+      "value": -1.087,
+      "threshold": 0,
+      "pass": false
+    }
+  },
+  "position_sizing": {
+    "max_risk_budget_inr": 3000.0,
+    "risk_per_share": 31.45,
+    "shares": 50,
+    "position_value_inr": 39815.0,
+    "position_pct_of_capital": 19.91,
+    "size_multiplier": 0.75
+  },
+  "var_metrics": {
+    "daily_var_95_pct": -1.928,
+    "daily_cvar_95_pct": -2.845,
+    "position_var_inr": 767.59,
+    "position_cvar_inr": 1132.73
+  },
+  "market_risk": {
+    "sector": "Financial Services",
+    "beta": 0.432,
+    "ann_vol_pct": 19.75,
+    "max_dd_pct": -27.78,
+    "sharpe_ratio": -1.087,
+    "skewness": 0.0204,
+    "kurtosis": 3.5433
+  },
+  "trade_levels": {
+    "entry": 796.3,
+    "stop_loss": 764.85,
+    "target_1": 859.2,
+    "target_2": 890.66,
+    "risk_amount": 31.45,
+    "risk_pct": 3.95,
+    "risk_reward_1": 2.0,
+    "risk_reward_2": 3.0
+  }
+}

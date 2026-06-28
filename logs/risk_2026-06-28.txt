@@ -1,0 +1,10 @@
+SwingTradeIQ RiskAgent
+Date    : 2026-06-28 15:11
+Duration: 0.0s
+
+[15:11:11] RiskAgent — 4 tickers  capital=₹200,000
+[15:11:11] BAJAJ-AUTO: APPROVED  risk=5.0  flags=[]
+[15:11:11] HDFCBANK: APPROVED_REDUCED  risk=4.9  flags=['NEGATIVE_SHARPE(-1.09→-25%size)']
+[15:11:11] INFY: APPROVED_REDUCED  risk=5.9  flags=['DRAWDOWN_HIGH(-37.8%→-25%size)', 'NEGATIVE_SHARPE(-1.44→-25%size)']
+[15:11:11] TCS: REJECTED  risk=None  flags=['NO_TRADE']
+[15:11:11] Done — 0.0s

@@ -1,0 +1,9 @@
+{
+  "ticker": "TCS",
+  "signal": "NO_TRADE",
+  "risk_decision": "REJECTED",
+  "rejection_reason": "NO_TRADE signal from IndicatorEngine",
+  "risk_flags": [
+    "NO_TRADE"
+  ]
+}

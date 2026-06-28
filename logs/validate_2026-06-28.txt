@@ -1,0 +1,12 @@
+SwingTradeIQ QualityValidatorAgent
+Date    : 2026-06-28 15:11
+Duration: 0.0s
+Passed  : 4
+Failed  : 0
+
+[15:11:11] QualityValidatorAgent — 4 files to validate
+[15:11:11] Validating BAJAJ-AUTO
+[15:11:11] Validating HDFCBANK
+[15:11:11] Validating INFY
+[15:11:11] Validating TCS
+[15:11:11] Done — 4 passed, 0 failed, 0.0s

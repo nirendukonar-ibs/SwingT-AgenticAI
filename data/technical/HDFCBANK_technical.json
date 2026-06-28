@@ -1,0 +1,94 @@
+{
+  "ticker": "HDFCBANK",
+  "as_of_date": "2026-06-25",
+  "technical_score": 7.4,
+  "signal": "BUY",
+  "snapshot": {
+    "price": 796.3,
+    "sma20": 756.24,
+    "sma50": 760.85,
+    "sma200": 881.15,
+    "ema12": 774.57,
+    "ema26": 765.0,
+    "rsi14": 64.4,
+    "stoch_k": 90.3,
+    "stoch_d": 88.3,
+    "atr14": 15.73,
+    "atr_pct": 1.97
+  },
+  "52w": {
+    "high": 1003.9,
+    "low": 714.83,
+    "pct_from_high": -20.7,
+    "pct_from_low": 11.4
+  },
+  "components": {
+    "ma_trend": {
+      "score": 5.0,
+      "weight": 0.25,
+      "detail": {
+        "vs_sma20": "above",
+        "vs_sma50": "above",
+        "vs_sma200": "below",
+        "sma50_vs_sma200": "death",
+        "score": 5.0
+      }
+    },
+    "rsi": {
+      "score": 9.0,
+      "weight": 0.2,
+      "detail": {
+        "rsi": 64.4,
+        "zone": "optimal",
+        "score": 9.0
+      }
+    },
+    "macd": {
+      "score": 9.0,
+      "weight": 0.2,
+      "detail": {
+        "macd": 9.5718,
+        "signal": 3.8549,
+        "histogram": 5.7169,
+        "cross": "bullish",
+        "macd_above_zero": "True",
+        "score": 9.0
+      }
+    },
+    "bollinger": {
+      "score": 7.0,
+      "weight": 0.15,
+      "detail": {
+        "bb_pct": 0.915,
+        "bb_upper": 804.48,
+        "bb_mid": 756.24,
+        "bb_lower": 708.01,
+        "zone": "upper_zone",
+        "score": 7.0
+      }
+    },
+    "adx": {
+      "score": 6.0,
+      "weight": 0.1,
+      "detail": {
+        "adx": 22.0,
+        "plus_di": 29.0,
+        "minus_di": 15.9,
+        "strength": "moderate",
+        "direction": "up",
+        "score": 6.0
+      }
+    },
+    "volume_obv": {
+      "score": 9.0,
+      "weight": 0.1,
+      "detail": {
+        "obv_current": -1033641879,
+        "obv_20d_ago": -1263675562,
+        "slope_20d": 0.182,
+        "trend": "strong_accumulation",
+        "score": 9.0
+      }
+    }
+  }
+}

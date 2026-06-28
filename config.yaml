@@ -1,4 +1,3 @@
-cat > ~/SwingTradeIQ/config.yaml << 'EOF'
 portfolio:
   total_capital: 200000
   max_open_positions: 8
@@ -25,4 +24,3 @@ alerts:
   stop_loss_breach: true
   target_hit: true
   output: terminal
-EOF

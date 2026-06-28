@@ -1,0 +1,68 @@
+{
+  "ticker": "BAJAJ-AUTO",
+  "short_name": "BAJAJ AUTO LIMITED",
+  "sector": "Consumer Cyclical",
+  "industry": "Auto Manufacturers",
+  "currency": "INR",
+  "market_cap_cr": 275083.0,
+  "fundamental_score": 5.65,
+  "pass": true,
+  "threshold": 5.0,
+  "metric_scores": {
+    "pe": {
+      "value": 25.5937,
+      "score": 3.0,
+      "weight": 0.2
+    },
+    "pb": {
+      "value": 7.0852,
+      "score": 3.0,
+      "weight": 0.15
+    },
+    "roe": {
+      "value": 0.2805,
+      "score": 8.0,
+      "weight": 0.2
+    },
+    "de": {
+      "value": 56.352,
+      "score": 2.0,
+      "weight": 0.15
+    },
+    "revenue_growth": {
+      "value": 0.37,
+      "score": 10.0,
+      "weight": 0.15
+    },
+    "gross_margin": {
+      "value": 0.3315,
+      "score": 8.0,
+      "weight": 0.1
+    },
+    "current_ratio": {
+      "value": 1.761,
+      "score": 8.0,
+      "weight": 0.05
+    }
+  },
+  "raw_fundamentals": {
+    "pe": 25.59,
+    "pb": 7.09,
+    "roe_pct": 28.0,
+    "de": 56.35,
+    "revenue_growth_pct": 37.0,
+    "gross_margin_pct": 33.2,
+    "current_ratio": 1.76,
+    "beta": 0.681,
+    "dividend_yield_pct": 1.52,
+    "operating_cashflow_cr": 2596.6
+  },
+  "eda_context": {
+    "ticker": "BAJAJ-AUTO",
+    "rows": 247,
+    "annualised_return_pct": 17.96,
+    "annualised_volatility_pct": 22.12,
+    "sharpe_ratio": 0.812,
+    "max_drawdown_pct": -13.37
+  }
+}

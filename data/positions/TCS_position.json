@@ -1,0 +1,9 @@
+{
+  "ticker": "TCS",
+  "signal": "NO_TRADE",
+  "risk_decision": "REJECTED",
+  "final_shares": 0,
+  "position_value": 0.0,
+  "sizing_basis": "rejected",
+  "kelly": null
+}

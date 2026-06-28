@@ -1,0 +1,133 @@
+{
+  "run_at": "2026-06-28T15:11:11.452596",
+  "total": 4,
+  "passed": 4,
+  "failed": 0,
+  "thresholds": {
+    "min_history_rows": 100,
+    "max_missing_close_frac": 0.05,
+    "max_gap_calendar_days": 10,
+    "spike_sigma": 5.0,
+    "max_stale_trading_days": 5
+  },
+  "tickers": [
+    {
+      "ticker": "BAJAJ-AUTO",
+      "source_file": "/Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/data/raw/BAJAJ-AUTO_ohlcv.csv",
+      "status": "passed",
+      "checks": {
+        "missing_values": {
+          "Open": 0,
+          "High": 0,
+          "Low": 0,
+          "Close": 0,
+          "Volume": 0
+        },
+        "negative_price_rows": 0,
+        "ohlc_inconsistent_rows": 0,
+        "duplicate_dates": 0,
+        "calendar_gaps": [],
+        "price_spikes": [],
+        "staleness": {
+          "last_date": "2026-06-25",
+          "calendar_days_old": 3,
+          "est_trading_days_old": 2,
+          "is_stale": false
+        }
+      },
+      "repairs": {},
+      "output_path": "/Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/data/validated/BAJAJ-AUTO_validated.csv",
+      "rows_raw": 247,
+      "rows_validated": 247
+    },
+    {
+      "ticker": "HDFCBANK",
+      "source_file": "/Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/data/raw/HDFCBANK_ohlcv.csv",
+      "status": "passed",
+      "checks": {
+        "missing_values": {
+          "Open": 0,
+          "High": 0,
+          "Low": 0,
+          "Close": 0,
+          "Volume": 0
+        },
+        "negative_price_rows": 0,
+        "ohlc_inconsistent_rows": 0,
+        "duplicate_dates": 0,
+        "calendar_gaps": [],
+        "price_spikes": [],
+        "staleness": {
+          "last_date": "2026-06-25",
+          "calendar_days_old": 3,
+          "est_trading_days_old": 2,
+          "is_stale": false
+        }
+      },
+      "repairs": {},
+      "output_path": "/Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/data/validated/HDFCBANK_validated.csv",
+      "rows_raw": 247,
+      "rows_validated": 247
+    },
+    {
+      "ticker": "INFY",
+      "source_file": "/Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/data/raw/INFY_ohlcv.csv",
+      "status": "passed",
+      "checks": {
+        "missing_values": {
+          "Open": 0,
+          "High": 0,
+          "Low": 0,
+          "Close": 0,
+          "Volume": 0
+        },
+        "negative_price_rows": 0,
+        "ohlc_inconsistent_rows": 0,
+        "duplicate_dates": 0,
+        "calendar_gaps": [],
+        "price_spikes": [],
+        "staleness": {
+          "last_date": "2026-06-25",
+          "calendar_days_old": 3,
+          "est_trading_days_old": 2,
+          "is_stale": false
+        }
+      },
+      "repairs": {},
+      "output_path": "/Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/data/validated/INFY_validated.csv",
+      "rows_raw": 247,
+      "rows_validated": 247
+    },
+    {
+      "ticker": "TCS",
+      "source_file": "/Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/data/raw/TCS_ohlcv.csv",
+      "status": "passed",
+      "checks": {
+        "missing_values": {
+          "Open": 0,
+          "High": 0,
+          "Low": 0,
+          "Close": 0,
+          "Volume": 0
+        },
+        "negative_price_rows": 0,
+        "ohlc_inconsistent_rows": 0,
+        "duplicate_dates": 0,
+        "calendar_gaps": [],
+        "price_spikes": [
+          "2026-06-03"
+        ],
+        "staleness": {
+          "last_date": "2026-06-25",
+          "calendar_days_old": 3,
+          "est_trading_days_old": 2,
+          "is_stale": false
+        }
+      },
+      "repairs": {},
+      "output_path": "/Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC/data/validated/TCS_validated.csv",
+      "rows_raw": 247,
+      "rows_validated": 247
+    }
+  ]
+}
