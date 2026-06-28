@@ -148,25 +148,3 @@ class DataCollectorAgent:
             'ohlcv_dir': str(self.raw_dir), 'meta_path': str(meta_path),
             'log_path': str(log_path), 'elapsed_s': round(elapsed, 1),
         }
-
-
-# ── Save to agents/data_collector.py ─────────────────────────────────────────
-import inspect
-agent_source = inspect.getsource(DataCollectorAgent)
-agent_file   = BASE_DIR / 'agents' / 'data_collector.py'
-
-with open(agent_file, 'w') as f:
-    f.write("# SwingTradeIQ — Agent 1/10: DataCollectorAgent\n")
-    f.write("# Built in Session 1. Do not edit during later sessions.\n")
-    f.write("# Handoff: produces data/raw/*_ohlcv.csv + data/meta/universe_meta.json\n\n")
-    f.write("import os, time, json, warnings\n")
-    f.write("from pathlib import Path\n")
-    f.write("from datetime import datetime, timedelta\n")
-    f.write("import yfinance as yf\n")
-    f.write("import pandas as pd\n")
-    f.write("warnings.filterwarnings('ignore')\n\n\n")
-    f.write(agent_source)
-
-print(f"\n✅ Agent saved to: {agent_file}")
-print(f"   Size: {agent_file.stat().st_size:,} bytes")
-print("\nReady for Session 2 — QualityValidatorAgent will read from data/raw/")
