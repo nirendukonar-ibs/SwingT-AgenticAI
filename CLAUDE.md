@@ -10,18 +10,18 @@ Companion project: BrandPulse IQ (Marketing track, separate folder).
 in agents/ with the same pattern: __init__() → private methods → run().
 
 Agent pipeline (in order):
-1. DataCollectorAgent      → agents/data_collector.py      (Session 1 ✅)
-2. QualityValidatorAgent   → agents/quality_validator.py   (Session 2)
-3. EDAAgent                → agents/eda_agent.py           (Session 3)
-4. FundamentalAgent        → agents/fundamental_agent.py   (Session 4)
-5. TechnicalAgent          → agents/technical_agent.py     (Session 5)
-6. IndicatorEngine         → agents/indicator_engine.py    (Session 6)
-7. RiskAgent               → agents/risk_agent.py          (Session 7)
-8. PositionSizerAgent      → agents/position_sizer.py      (Session 8)
-9. PortfolioManagerAgent   → agents/portfolio_manager.py   (Session 9)
-10. ReportAgent            → agents/report_agent.py        (Session 10)
+1. DataCollectorAgent      → agents/data_collector.py      (Session 1  ✅)
+2. QualityValidatorAgent   → agents/quality_validator.py   (Session 2  ✅)
+3. EDAAgent                → agents/eda_agent.py           (Session 3  ✅)
+4. FundamentalAgent        → agents/fundamental_agent.py   (Session 4  ✅)
+5. TechnicalAgent          → agents/technical_agent.py     (Session 5  ✅)
+6. IndicatorEngine         → agents/indicator_engine.py    (Session 6  ✅)
+7. RiskAgent               → agents/risk_agent.py          (Session 7  ✅)
+8. PositionSizerAgent      → agents/position_sizer.py      (Session 8  ✅)
+9. PortfolioManagerAgent   → agents/portfolio_manager.py   (Session 9  ✅)
+10. ReportAgent            → agents/report_agent.py        (Session 10 ✅)
 
-Orchestrator:              → swingtrade_iq.py              (Session 10)
+Orchestrator:              → swingtrade_iq.py              (Session 10 ✅)
 
 ## Data flow
 data/raw/          ← DataCollectorAgent writes here
@@ -69,5 +69,7 @@ NSE_CLOSE_TIME = "15:30"    # IST — run after this
 - Don't add features not yet in the session plan — build in session order
 
 ## Current status
-Session 1 complete: DataCollectorAgent ✅
-Sessions 2-10: Not yet built — build in order, one per session
+All 10 sessions complete ✅ — pipeline fully operational.
+
+Sessions 1–10 built and tested on INFY, HDFCBANK, TCS, BAJAJ-AUTO (NSE).
+Run the full system: python swingtrade_iq.py --mode scan --capital 200000
