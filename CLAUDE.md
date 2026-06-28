@@ -6,8 +6,8 @@ Built as part of Advanced Business Analytics MBA course at IBS India, Kolkata.
 Companion project: BrandPulse IQ (Marketing track, separate folder).
 
 ## Architecture
-10 specialist agents built across 12 sessions. Each agent is a Python class
-in agents/ with the same pattern: __init__() → private methods → run().
+10 specialist agents + backtest engine. Each agent: Python class in agents/
+with pattern __init__() → private methods → run().
 
 Agent pipeline (in order):
 1. DataCollectorAgent      → agents/data_collector.py      (Session 1  ✅)
@@ -21,7 +21,21 @@ Agent pipeline (in order):
 9. PortfolioManagerAgent   → agents/portfolio_manager.py   (Session 9  ✅)
 10. ReportAgent            → agents/report_agent.py        (Session 10 ✅)
 
-Orchestrator:              → swingtrade_iq.py              (Session 10 ✅)
+BacktestEngine             → agents/backtest_engine.py     (Session 10 ✅)
+Orchestrator               → swingtrade_iq.py              (Session 10 ✅)
+
+## Agent responsibilities (one-liner each)
+1. DataCollector      — fetches OHLCV + metadata from yfinance; writes data/raw/
+2. QualityValidator   — 8 checks (gaps, spikes, staleness, OHLC logic); repairs & writes data/validated/
+3. EDA                — log-returns, annualised vol/return/Sharpe, max drawdown, correlation matrix
+4. Fundamental        — sector-aware scoring: PE/PB/ROE/D-E/gross margin/current ratio/div yield
+5. Technical          — SMA/EMA/MACD/RSI/Stochastic/BB/ATR/ADX/OBV via `ta` library; 6-component score
+6. IndicatorEngine    — MACD/RSI/BB pattern detection; ATR trade levels; combined signal (Tech+Fund)
+7. RiskAgent          — VaR/CVaR (95%); hard/soft rejection rules; per-position size multiplier
+8. PositionSizer      — Kelly criterion (half-Kelly, trade variant); min(kelly, risk-budget) shares
+9. PortfolioManager   — portfolio-level metrics (Markowitz vol, Sharpe, beta); scenario analysis; ranked orders
+10. ReportAgent       — HTML report (21 KB), JSON summary, CSV trade orders
+BacktestEngine        — walk-forward portfolio sim; 0.2% cost/leg; MACD cross signal; equity curve + metrics
 
 ## Data flow
 data/raw/          ← DataCollectorAgent writes here
@@ -31,29 +45,66 @@ data/fundamental/  ← FundamentalAgent writes here
 data/technical/    ← TechnicalAgent writes here
 data/signals/      ← IndicatorEngine writes here
 data/risk/         ← RiskAgent writes here
+data/positions/    ← PositionSizerAgent writes here
+data/portfolio/    ← PortfolioManagerAgent writes here
+data/backtest/     ← BacktestEngine writes here
 data/meta/         ← universe_meta.json (from DataCollector)
-outputs/           ← Final reports (HTML, PDF, JSON, CSV)
+outputs/           ← Final reports (HTML, JSON, CSV) — gitignored
 logs/              ← Per-agent run logs
 
+## Key output files (quick reference)
+outputs/report_YYYY-MM-DD.json          — master daily report (read after every scan)
+data/portfolio/portfolio_state.json     — final positions, capital table, sector allocation
+data/portfolio/trade_orders.json        — priority-ordered executable buy orders
+data/portfolio/scenario_analysis.json  — bear / bull T1 / bull T2 / expected value
+data/portfolio/portfolio_metrics.json  — Sharpe, beta, vol, diversification ratio
+data/backtest/backtest_START_END.json  — backtest results + full trade log
+
+## Signal logic & scoring weights
+Combined score  = tech_score × 0.60  +  fund_score × 0.40   (both 0–10)
+SWING_BUY       if combined ≥ 6.0 AND fundamental passed (score ≥ min_fundamental_score)
+WATCH           if combined ≥ 4.5
+NO_TRADE        otherwise
+ATR trade levels: stop = entry − 2×ATR14 | T1 = entry + 4×ATR14 | T2 = entry + 6×ATR14
+Risk hard rules : R/R < 1.5 OR max_dd < −50% OR ATR% > 8%  → REJECTED
+Risk soft rules : max_dd < −30%, ATR% > 4%, Sharpe < 0  → each applies ×0.75 size multiplier
+Kelly sizing    : half-Kelly (fraction=0.5); uses trade Kelly = win_rate − loss_rate/R_ratio
+Position cap    : min(kelly_shares, risk_budget_shares); hard cap at 20% equity per position
+
+## config.yaml key fields
+portfolio.total_capital         — trading capital in INR (default 200000)
+portfolio.max_open_positions    — simultaneous position cap (default 8)
+portfolio.max_sector_exposure   — max % capital in one sector (default 0.30)
+portfolio.risk_per_trade        — % capital risked per trade (default 0.02)
+portfolio.kelly_fraction        — half-Kelly multiplier (default 0.5; reduce to 0.4 if WR < 45%)
+filters.min_fundamental_score   — minimum score to qualify for a trade (default 5.0)
+
 ## Coding conventions
-- Every agent class MUST have: __init__(), run(), and save its outputs
-- run() MUST return a dict with keys: succeeded, failed, output_paths, elapsed_s
+- Every agent MUST have: __init__(), run(), and save its outputs
+- run() MUST return dict with keys: succeeded, failed, output_paths, elapsed_s
 - All file paths use pathlib.Path — never string concatenation
-- NSE tickers always stored WITH .NS suffix internally
+- NSE tickers stored WITH .NS suffix internally; strip for display only
 - auto_adjust=True always when calling yfinance.download()
-- No print statements in agent methods — use self._log() instead
-- All outputs are JSON-serialisable (use default=str in json.dump)
+- No print() in agent methods — use self._log() instead
+- All outputs JSON-serialisable (use default=str in json.dump)
 
 ## Python environment
-Virtual environment: venv/ (never commit this)
-Activate before running: source venv/bin/activate
-Install deps: pip install -r requirements.txt
+Virtual environment: venv/ (never commit)
+Activate: source venv/bin/activate
+Install:  pip install -r requirements.txt
 
 ## Run commands
 Full scan:     python swingtrade_iq.py --mode scan --capital 200000
 Monitor:       python swingtrade_iq.py --mode monitor
 Weekly review: python swingtrade_iq.py --mode review
-Backtest:      python swingtrade_iq.py --mode backtest --start 2024-01-01 --end 2024-12-31
+Backtest:      python swingtrade_iq.py --mode backtest --start 2023-01-01 --end 2024-12-31
+Custom tickers: add --tickers INFY TCS RELIANCE to any mode
+
+## Slash commands (.claude/commands/)
+/scan     — full daily pipeline; elaborate per-ticker signal + order report
+/monitor  — position health check (Tue–Thu); alerts, live R, trailing stop guidance
+/review   — weekly review (Friday); scorecard, Kelly calibration, next-week prep
+/backtest — historical backtest; 9-section report incl. cost impact, Kelly check, insights
 
 ## Key constants (don't change without updating all agents)
 MIN_HISTORY_ROWS = 100       # minimum OHLCV rows needed
@@ -63,13 +114,44 @@ NSE_CLOSE_TIME = "15:30"    # IST — run after this
 
 ## What NOT to do
 - Never hardcode capital amounts in agent files — always read from config.yaml
-- Never fetch data inside __init__() — only in run() or explicit fetch methods  
+- Never fetch data inside __init__() — only in run() or explicit fetch methods
 - Never write to data/raw/ from any agent other than DataCollectorAgent
 - Never delete files from data/ without explicit user instruction
-- Don't add features not yet in the session plan — build in session order
 
 ## Current status
-All 10 sessions complete ✅ — pipeline fully operational.
-
-Sessions 1–10 built and tested on INFY, HDFCBANK, TCS, BAJAJ-AUTO (NSE).
+All 10 sessions + BacktestEngine complete ✅ — pipeline fully operational.
+Tested on INFY, HDFCBANK, TCS, BAJAJ-AUTO (NSE).
 Run the full system: python swingtrade_iq.py --mode scan --capital 200000
+
+---
+
+## Operating Instructions
+
+### Trigger phrases → map to mode
+- "scan / setups today / what should I buy" → /scan
+- "check positions / monitor portfolio"      → /monitor
+- "weekly review"                            → /review
+- "backtest [dates]"                         → /backtest [start] [end]
+
+### Capital & watchlist parsing
+- "2 lakhs" → 200000 | "1.5 lakh" → 150000 | "50k" → 50000 | else read config.yaml
+- "Nifty 50" → use nifty50 universe | "my watchlist" → read config.yaml
+
+### After every scan/monitor/review
+1. Read the appropriate JSON output file (see Key output files above)
+2. Present in the format defined in .claude/commands/[mode].md
+3. Check references/risk-calendar.md for events within 5 trading days
+4. Always append the disclaimer
+
+### Error handling
+| Error | Response |
+|---|---|
+| swingtrade_iq.py not found | "Not built yet — run Sessions 1–10 first" |
+| yfinance fetch fails | Skip failed tickers, continue with rest |
+| No signals generated | "No setups today — market likely ranging" |
+| venv not activated | Run `source venv/bin/activate` first |
+
+### Disclaimer (append to every output)
+> ⚠️ SwingTradeIQ is for educational purposes only as part of IBS India MBA —
+> Advanced Business Analytics. Not SEBI-registered investment advice.
+> Consult a registered advisor before actual trading.
