@@ -1,0 +1,28 @@
+cat > ~/SwingTradeIQ/config.yaml << 'EOF'
+portfolio:
+  total_capital: 200000
+  max_open_positions: 8
+  max_sector_exposure: 0.30
+  risk_per_trade: 0.02
+  kelly_fraction: 0.5
+
+watchlist:
+  universe: nifty50
+  custom_tickers: []
+
+filters:
+  min_market_cap_cr: 5000
+  min_avg_daily_volume: 500000
+  min_fundamental_score: 5.0
+  exclude_sectors: []
+  exclude_tickers: []
+
+kelly:
+  fraction: 0.5
+  lookback_trades: 20
+
+alerts:
+  stop_loss_breach: true
+  target_hit: true
+  output: terminal
+EOF
