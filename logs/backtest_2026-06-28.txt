@@ -1,0 +1,13 @@
+SwingTradeIQ BacktestEngine
+Period: 2023-01-01_2024-12-31
+Duration: 3.2s
+
+[15:29:05] Fetching INFY.NS 2022-03-07 → 2024-12-31
+[15:29:06] Fetching HDFCBANK.NS 2022-03-07 → 2024-12-31
+[15:29:06] Fetching TCS.NS 2022-03-07 → 2024-12-31
+[15:29:06] Fetching BAJAJ-AUTO.NS 2022-03-07 → 2024-12-31
+[15:29:07] INFY: 8 signals in window
+[15:29:07] HDFCBANK: 10 signals in window
+[15:29:07] TCS: 12 signals in window
+[15:29:07] BAJAJ-AUTO: 8 signals in window
+[15:29:08] Done — 3.2s  trades=33

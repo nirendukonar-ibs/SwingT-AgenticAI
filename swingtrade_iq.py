@@ -200,16 +200,20 @@ def mode_monitor() -> None:
     _print_pipeline_summary(results, total_start)
 
 
-# ─── Mode: backtest (placeholder) ────────────────────────────────────────────
+# ─── Mode: backtest ──────────────────────────────────────────────────────────
 
-def mode_backtest(start: str, end: str, watchlist: list[str]) -> None:
+def mode_backtest(start: str, end: str, capital: float,
+                  watchlist: list[str]) -> None:
+    from agents.backtest_engine import BacktestEngine
     _sep("BACKTEST — Historical simulation")
-    print(f"  Window  : {start} → {end}")
-    print(f"  Universe: {watchlist}")
-    print()
-    print("  ⚠  Backtest engine not yet implemented (planned post-Session 10).")
-    print("  The framework will replay the scan pipeline day-by-day across the")
-    print("  window, logging hypothetical trades and computing realised P&L.")
+    engine = BacktestEngine(
+        base_dir   = BASE_DIR,
+        start_date = start,
+        end_date   = end,
+        capital    = capital,
+        tickers    = watchlist,
+    )
+    engine.run()
 
 
 # ─── Summary ─────────────────────────────────────────────────────────────────
@@ -297,7 +301,7 @@ def main() -> None:
         if not args.start or not args.end:
             print("ERROR: --start and --end are required for backtest mode")
             sys.exit(1)
-        mode_backtest(args.start, args.end, watchlist)
+        mode_backtest(args.start, args.end, capital, watchlist)
 
 
 if __name__ == '__main__':
