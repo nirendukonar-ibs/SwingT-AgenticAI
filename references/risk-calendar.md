@@ -1,7 +1,7 @@
 # SwingTradeIQ — Risk Event Calendar
 
 High-impact events where position sizes should be reduced or new entries avoided.
-Updated: June 2025. Refresh this file at start of each month.
+Updated: June 2026. Refresh this file at start of each quarter.
 
 ---
 
@@ -20,71 +20,107 @@ Updated: June 2025. Refresh this file at start of each month.
 
 ---
 
-## Recurring Calendar — FY 2025-26
+## Recurring Calendar — FY 2026-27
 
 ### RBI Monetary Policy Committee (MPC) Meetings
-Dates announced ~2 months in advance. Decisions released ~10:00 AM IST.
+Three-day meetings. Decision announced by RBI Governor on the final day ~10:00 AM IST.
+Source: RBI / Upstox (March 2026 announcement)
 
-| Meeting | Decision Date |
-|---|---|
-| MPC 1 | 4–6 June 2025 |
-| MPC 2 | 5–7 August 2025 |
-| MPC 3 | 29 Sep – 1 Oct 2025 |
-| MPC 4 | 4–6 December 2025 |
-| MPC 5 | February 2026 (TBD) |
-| MPC 6 | April 2026 (TBD) |
+| Meeting | Meeting Dates | Decision Date | Status |
+|---|---|---|---|
+| MPC 1 | Apr 6–8, 2026 | **Apr 8, 2026** | ✅ Done |
+| MPC 2 | Jun 3–5, 2026 | **Jun 5, 2026** | ✅ Done |
+| MPC 3 | Aug 3–5, 2026 | **Aug 5, 2026** | ⏳ Upcoming |
+| MPC 4 | Oct 5–7, 2026 | **Oct 7, 2026** | ⏳ Upcoming |
+| MPC 5 | Dec 2–4, 2026 | **Dec 4, 2026** | ⏳ Upcoming |
+| MPC 6 | Feb 3–5, 2027 | **Feb 5, 2027** | ⏳ Upcoming |
+
+> Action: Reduce all open positions by 30% on the day before each decision date. No new entries on decision day.
+
+---
 
 ### Union Budget
-- Interim Budget: February 1, 2025 (done)
-- Full Budget: July 2025 (TBD — watch for announcement)
+- **FY 2026-27 Budget**: Presented February 1, 2026 (Finance Minister Nirmala Sitharaman, 9th consecutive budget) ✅ Done
+- **FY 2027-28 Budget**: Expected February 1, 2027 — mark calendar in Jan 2027
 
-### US FOMC Meetings (remaining 2025)
-| Meeting | Decision Date (IST) |
-|---|---|
-| July | 30 July 2025 (late night IST) |
-| September | 17 Sep 2025 |
-| November | 6 Nov 2025 |
-| December | 17 Dec 2025 |
+---
+
+### US Federal Reserve FOMC Meetings 2026
+Decision released ~11:30 PM IST (2:00 PM ET). Markets react overnight; next-day NSE open is the risk point.
+Source: federalreserve.gov
+
+| Meeting | Dates | Decision (IST) | Status |
+|---|---|---|---|
+| FOMC 1 | Jan 27–28, 2026 | Jan 29, 2026 (night) | ✅ Done |
+| FOMC 2 | Mar 17–18, 2026 | Mar 19, 2026 (night) | ✅ Done |
+| FOMC 3 | Apr 28–29, 2026 | Apr 30, 2026 (night) | ✅ Done |
+| FOMC 4 | Jun 16–17, 2026 | Jun 18, 2026 (night) | ✅ Done |
+| FOMC 5 | Jul 28–29, 2026 | **Jul 30, 2026 (night)** | ⏳ Next — 22 days away |
+| FOMC 6 | Sep 15–16, 2026 | Sep 17, 2026 (night) | ⏳ Upcoming |
+| FOMC 7 | Oct 27–28, 2026 | Oct 29, 2026 (night) | ⏳ Upcoming |
+| FOMC 8 | Dec 8–9, 2026 | Dec 10, 2026 (night) | ⏳ Upcoming |
+
+> Sep, Dec meetings include dot plot / SEP — higher volatility expected. Reduce 20% on NSE open the morning after each decision.
+
+---
 
 ### Nifty 50 Index Rebalancing
-NSE rebalances semi-annually. Next: ~October 2025.
-Stocks being added/removed show unusual volume — exclude from signals week of rebalancing.
+NSE reconstitutes semi-annually. Changes effective first working day after F&O expiry in March and September.
+Four weeks' prior notice given. Stocks being added/removed show unusual volume — exclude from signals that week.
+
+| Cycle | Announcement | Effective Date | Status |
+|---|---|---|---|
+| March 2026 | ~Feb 2026 | Mar 31, 2026 | ✅ Done |
+| September 2026 | ~Late Aug 2026 | ~Sep 25, 2026 (post F&O expiry) | ⏳ Upcoming |
+| March 2027 | ~Feb 2027 | ~Mar 31, 2027 | ⏳ Future |
 
 ---
 
-## Quarterly Earnings Season (NSE)
+## Quarterly Earnings Season (NSE) — FY 2026-27
 
-Results announced 45 days after quarter end. Heavy flow period:
-- Q1 FY26 (Apr–Jun): July 15 – August 15, 2025
-- Q2 FY26 (Jul–Sep): October 15 – November 15, 2025
-- Q3 FY26 (Oct–Dec): January 15 – February 15, 2026
-- Q4 FY26 (Jan–Mar): April 15 – May 15, 2026
+Results declared ~45 days after quarter end. Heavy flow period — PositionSizerAgent auto-reduces size for stocks with results due within 5 days.
 
-During earnings season: PositionSizerAgent auto-reduces size for stocks
-with results due within 5 days. Risk classification elevated to HIGH.
+| Quarter | Period | Earnings Flow Window | Status |
+|---|---|---|---|
+| Q1 FY27 | Apr–Jun 2026 | **Jul 15 – Aug 15, 2026** | ⚠️ Starts in 17 days |
+| Q2 FY27 | Jul–Sep 2026 | Oct 15 – Nov 15, 2026 | ⏳ Upcoming |
+| Q3 FY27 | Oct–Dec 2026 | Jan 15 – Feb 15, 2027 | ⏳ Upcoming |
+| Q4 FY27 | Jan–Mar 2027 | Apr 15 – May 15, 2027 | ⏳ Future |
+
+> ⚠️ Q1 FY27 earnings season begins July 15 — within 3 weeks. Healthcare (DIVISLAB, SUNPHARMA, DRREDDY, CIPLA) and Financials (SBIN, SHRIRAMFIN, ICICIBANK) are high-activity sectors. Plan partial exits or tighten stops on T1 targets before July 15 for current holdings.
 
 ---
 
-## NSE Holidays 2025
+## NSE Trading Holidays 2026
 
-| Date | Holiday |
-|---|---|
-| 26 Jan | Republic Day |
-| 14 Feb | Mahashivratri (if applicable) |
-| 17 Mar | Holi |
-| 14 Apr | Dr. Ambedkar Jayanti / Ram Navami |
-| 18 Apr | Good Friday |
-| 01 May | Maharashtra Day |
-| 15 Aug | Independence Day |
-| 27 Aug | Ganesh Chaturthi |
-| 02 Oct | Gandhi Jayanti |
-| 02 Oct | Dussehra (if applicable) |
-| 20 Oct | Diwali Laxmi Pujan |
-| 21 Oct | Diwali Balipratipada |
-| 05 Nov | Guru Nanak Jayanti |
-| 25 Dec | Christmas |
+16 weekday trading holidays. Source: Groww / NSE official circular.
 
-*Verify against NSE official holiday list annually. File: `data/universe/nse_holidays_2025.csv`*
+| Date | Day | Holiday | Status |
+|---|---|---|---|
+| Jan 15 | Thu | Municipal Corporation Election (Maharashtra) | ✅ Past |
+| Jan 26 | Mon | Republic Day | ✅ Past |
+| Mar 3  | Tue | Holi | ✅ Past |
+| Mar 26 | Thu | Shri Ram Navami | ✅ Past |
+| Mar 31 | Tue | Shri Mahavir Jayanti | ✅ Past |
+| Apr 3  | Fri | Good Friday | ✅ Past |
+| Apr 14 | Tue | Dr. Baba Saheb Ambedkar Jayanti | ✅ Past |
+| May 1  | Fri | Maharashtra Day | ✅ Past |
+| May 28 | Thu | Bakri Id (Eid ul-Adha) | ✅ Past |
+| Jun 26 | Fri | Muharram | ✅ Past |
+| Sep 14 | Mon | Ganesh Chaturthi | ⏳ Upcoming |
+| Oct 2  | Fri | Mahatma Gandhi Jayanti | ⏳ Upcoming |
+| Oct 20 | Tue | Dussehra | ⏳ Upcoming |
+| Nov 10 | Tue | Diwali — Balipratipada | ⏳ Upcoming |
+| Nov 24 | Tue | Prakash Gurpurb Sri Guru Nanak Dev Ji | ⏳ Upcoming |
+| Dec 25 | Fri | Christmas | ⏳ Upcoming |
+
+**Weekend holidays (markets already closed — no additional impact):**
+- Feb 15 (Sun) — Mahashivratri
+- Mar 21 (Sat) — Id-Ul-Fitr
+- Aug 15 (Sat) — Independence Day
+- Nov 8 (Sun) — Diwali Laxmi Pujan *(Muhurat Trading session conducted this evening)*
+
+*Verify against NSE official circular annually. Reference: nseindia.com/resources/exchange-communication-holidays*
 
 ---
 
