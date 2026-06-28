@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(git add *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(git -C /Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC add README.md)",
+      "Bash(git -C /Users/nirendukonar/Documents/Projects/SwingT-AgenticAI-POC commit -m ' *)"
     ]
   }
 }
