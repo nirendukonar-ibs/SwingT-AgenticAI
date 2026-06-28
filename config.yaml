@@ -6,8 +6,13 @@ portfolio:
   kelly_fraction: 0.5
 
 watchlist:
+  # Named index  : nifty50 | nifty100 | nifty200 | nifty500 | nifty_midcap150 | …
+  # CSV file     : relative or absolute path to a .csv file
+  # Explicit list: set universe to 'custom' and list tickers in custom_tickers
   universe: nifty50
-  custom_tickers: []
+  csv_file: ""               # e.g. "data/universe/my_stocks.csv"
+  custom_tickers: []         # e.g. ["INFY", "TCS", "RELIANCE"]
+  max_universe_size: 50      # cap — prevents accidentally scanning 500 stocks
 
 filters:
   min_market_cap_cr: 5000

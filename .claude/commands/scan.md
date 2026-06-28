@@ -5,8 +5,17 @@ Run this after 3:30 PM IST on any trading day.
 
 Extract from the user's message:
 - **Capital**: "2 lakhs" → 200000, "1.5 lakh" → 150000, "50k" → 50000. If missing, read `portfolio.total_capital` from config.yaml.
-- **Tickers**: if the user names specific stocks, pass `--tickers`. Otherwise omit (uses config.yaml watchlist).
+- **Universe**: check which flag to use:
+  - User says specific tickers ("scan INFY, TCS, RELIANCE") → `--tickers INFY TCS RELIANCE`
+  - User says index ("scan Nifty 100", "run on Nifty 500") → `--universe nifty100` or `--universe nifty500`
+  - User provides a CSV ("scan using my_stocks.csv") → `--csv path/to/file.csv`
+  - User says nothing → omit all universe flags (uses config.yaml `watchlist.universe`, default: nifty50)
 - **Mode override**: if user says "just signals" or "no re-fetch", switch to `--mode monitor` instead.
+
+Universe flag reference:
+- Built-in (no CSV needed): `nifty50` (50), `nifty100` (100)
+- Needs CSV in data/universe/: `nifty200`, `nifty500`, `nifty_midcap150`, `nifty_smallcap250`
+- Run `python swingtrade_iq.py --list-universes` to see all options with download status.
 
 ## Step 2 — Pre-flight checks
 
@@ -20,12 +29,20 @@ If venv is missing: "Run `python -m venv venv && pip install -r requirements.txt
 
 ## Step 3 — Execute
 
+Build the command based on what the user asked:
 ```bash
 source venv/bin/activate
+# Base command — add flags as needed:
 python swingtrade_iq.py --mode scan --capital CAPITAL
+# Optional universe overrides (add ONE of these, or none for nifty50 default):
+#   --universe nifty100
+#   --universe nifty500          # requires data/universe/nifty500.csv
+#   --csv data/universe/my_picks.csv
+#   --tickers INFY TCS RELIANCE
 ```
 
 Stream the output. If it fails with a yfinance error, note which tickers failed and continue presenting results for the tickers that succeeded.
+If universe is nifty500 and the CSV is missing, say: "Download nifty500.csv from NSEIndia → data/universe/nifty500.csv (see data/universe/README.md)"
 
 ## Step 4 — Read output files
 

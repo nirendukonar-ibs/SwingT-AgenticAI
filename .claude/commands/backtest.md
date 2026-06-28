@@ -6,12 +6,17 @@ Extract from the user's message:
 - **Start date**: look for patterns like "2023-01-01", "Jan 2023", "last year", "2 years". Convert to YYYY-MM-DD. If missing, default to one year ago.
 - **End date**: same patterns. If missing, default to today minus 1 day.
 - **Capital**: "2 lakhs" → 200000, "1.5 lakh" → 150000, "50k" → 50000. If missing, read from config.yaml.
-- **Tickers**: if the user names specific tickers, use --tickers. Otherwise omit (use config.yaml watchlist).
+- **Universe**: resolve which flag to pass (same rules as /scan):
+  - Specific tickers → `--tickers INFY TCS RELIANCE`
+  - Named index ("backtest on Nifty 100") → `--universe nifty100`
+  - CSV file → `--csv data/universe/my_stocks.csv`
+  - Nothing specified → omit (uses config.yaml, default nifty50)
 
 ## Step 2 — Run the engine
 
 ```bash
 source venv/bin/activate
+# Add optional --universe / --csv / --tickers flag as resolved above:
 python swingtrade_iq.py --mode backtest --start START_DATE --end END_DATE --capital CAPITAL
 ```
 

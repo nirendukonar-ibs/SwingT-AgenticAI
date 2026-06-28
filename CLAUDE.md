@@ -98,7 +98,23 @@ Full scan:     python swingtrade_iq.py --mode scan --capital 200000
 Monitor:       python swingtrade_iq.py --mode monitor
 Weekly review: python swingtrade_iq.py --mode review
 Backtest:      python swingtrade_iq.py --mode backtest --start 2023-01-01 --end 2024-12-31
-Custom tickers: add --tickers INFY TCS RELIANCE to any mode
+
+## Universe configuration (stock universe is fully configurable)
+Default is Nifty 50 (50 stocks, bundled — no CSV needed). Priority order:
+  --tickers INFY TCS RELIANCE  → explicit list (highest priority)
+  --universe nifty100          → built-in Nifty 100 (bundled)
+  --universe nifty500          → needs data/universe/nifty500.csv
+  --csv /path/to/file.csv      → any CSV with a Symbol column
+  config.yaml watchlist.universe     → nifty50 (default)
+  config.yaml watchlist.csv_file     → path to a CSV
+  config.yaml watchlist.custom_tickers → explicit list in config
+
+Supported built-in names: nifty50, nifty100
+Supported CSV aliases (need data/universe/{name}.csv downloaded from NSEIndia):
+  nifty200, nifty500, nifty_midcap150, nifty_smallcap250, nifty250-400
+  See data/universe/README.md for download instructions.
+
+List all options: python swingtrade_iq.py --list-universes
 
 ## Slash commands (.claude/commands/)
 /scan     — full daily pipeline; elaborate per-ticker signal + order report
@@ -133,9 +149,12 @@ Run the full system: python swingtrade_iq.py --mode scan --capital 200000
 - "weekly review"                            → /review
 - "backtest [dates]"                         → /backtest [start] [end]
 
-### Capital & watchlist parsing
+### Capital & universe parsing
 - "2 lakhs" → 200000 | "1.5 lakh" → 150000 | "50k" → 50000 | else read config.yaml
-- "Nifty 50" → use nifty50 universe | "my watchlist" → read config.yaml
+- "Nifty 50 / default" → `--universe nifty50` (or omit, it's the default)
+- "Nifty 100" → `--universe nifty100`   |  "Nifty 500" → `--universe nifty500` (needs CSV)
+- "my watchlist / custom stocks" → `--tickers TICKER1 TICKER2 …`
+- "my CSV file" → `--csv path/to/file.csv`
 
 ### After every scan/monitor/review
 1. Read the appropriate JSON output file (see Key output files above)

@@ -100,11 +100,15 @@ class BacktestEngine:
         self._log_lines.append(f"[{datetime.now().strftime('%H:%M:%S')}] {msg}")
 
     def _default_tickers(self) -> list[str]:
-        meta = self.base_dir / 'data' / 'meta' / 'universe_meta.json'
-        if meta.exists():
-            m = json.load(open(meta))
-            return [t.replace('.NS', '') for t in m]
-        return ['INFY', 'HDFCBANK', 'TCS', 'BAJAJ-AUTO']
+        from agents.universe_loader import UniverseLoader
+        cfg  = yaml.safe_load(open(self.base_dir / 'config.yaml'))
+        wl   = cfg.get('watchlist', {})
+        name = wl.get('universe', 'nifty50') if isinstance(wl, dict) else 'nifty50'
+        max_size = wl.get('max_universe_size') if isinstance(wl, dict) else None
+        try:
+            return UniverseLoader(self.base_dir).load(name, max_size=max_size)
+        except Exception:
+            return ['INFY', 'HDFCBANK', 'TCS', 'BAJAJ-AUTO']
 
     # ── Data ─────────────────────────────────────────────────────────────────
 

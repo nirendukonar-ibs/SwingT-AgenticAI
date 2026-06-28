@@ -9,15 +9,26 @@ Modes
   scan     Full pipeline from data fetch through report (default)
   monitor  Refresh signals without re-fetching data (agents 5–10)
   review   Alias for scan — full weekly re-run
-  backtest Run historical backtest over a date range (placeholder)
+  backtest Run historical backtest over a date range
+
+Universe (in priority order — first match wins)
+-------
+  --tickers INFY TCS RELIANCE   explicit list
+  --universe nifty100            named index  (nifty50 | nifty100 | nifty500 | …)
+  --csv /path/to/stocks.csv      any CSV with a Symbol column
+  config.yaml watchlist.csv_file
+  config.yaml watchlist.custom_tickers
+  config.yaml watchlist.universe  (default: nifty50)
 
 Usage examples
 --------------
   python swingtrade_iq.py --mode scan --capital 200000
+  python swingtrade_iq.py --mode scan --universe nifty100
+  python swingtrade_iq.py --mode scan --csv data/universe/my_picks.csv
+  python swingtrade_iq.py --mode scan --tickers INFY TCS RELIANCE
   python swingtrade_iq.py --mode monitor
   python swingtrade_iq.py --mode review
-  python swingtrade_iq.py --mode backtest --start 2024-01-01 --end 2024-12-31
-  python swingtrade_iq.py --mode scan --tickers INFY HDFCBANK TCS
+  python swingtrade_iq.py --mode backtest --start 2023-01-01 --end 2024-12-31 --universe nifty50
 """
 
 import argparse
@@ -47,16 +58,47 @@ def load_config(capital_override: float | None = None) -> dict:
     return cfg
 
 
-_FALLBACK_WATCHLIST = ['INFY', 'HDFCBANK', 'TCS', 'BAJAJ-AUTO']
+def resolve_watchlist(cfg: dict,
+                      tickers:  list[str] | None = None,
+                      universe: str | None        = None,
+                      csv_path: str | None        = None) -> list[str]:
+    """
+    Resolve the stock universe in priority order:
+      1. --tickers (explicit CLI list)
+      2. --universe <name>  or  --csv <path>  (CLI overrides)
+      3. config.yaml watchlist.csv_file
+      4. config.yaml watchlist.custom_tickers (if non-empty)
+      5. config.yaml watchlist.universe       (named index, default nifty50)
+    """
+    from agents.universe_loader import UniverseLoader
+    loader   = UniverseLoader(BASE_DIR)
+    wl_cfg   = cfg.get('watchlist', {}) if isinstance(cfg.get('watchlist'), dict) else {}
+    max_size = wl_cfg.get('max_universe_size') or None
 
+    # 1. Explicit ticker list from CLI
+    if tickers:
+        from agents.universe_loader import UniverseLoader
+        return UniverseLoader._clean(tickers)
 
-def default_watchlist(cfg: dict) -> list[str]:
-    wl = cfg.get('watchlist', {})
-    if isinstance(wl, list):
-        return wl
-    # config.yaml has watchlist.custom_tickers + watchlist.universe key
-    custom = wl.get('custom_tickers', []) if isinstance(wl, dict) else []
-    return custom if custom else _FALLBACK_WATCHLIST
+    # 2. CLI --universe or --csv
+    if universe:
+        return loader.load(universe, max_size=max_size)
+    if csv_path:
+        return loader.load(csv_path, max_size=max_size)
+
+    # 3. config.yaml csv_file
+    csv_file = wl_cfg.get('csv_file', '').strip()
+    if csv_file:
+        return loader.load(csv_file, max_size=max_size)
+
+    # 4. config.yaml custom_tickers explicit list
+    custom = wl_cfg.get('custom_tickers', [])
+    if custom:
+        return loader.load('custom', custom=custom, max_size=max_size)
+
+    # 5. config.yaml universe name  (default: nifty50)
+    name = wl_cfg.get('universe', 'nifty50')
+    return loader.load(name, max_size=max_size)
 
 
 # ─── Agent runner helpers ─────────────────────────────────────────────────────
@@ -273,25 +315,50 @@ def main() -> None:
     parser.add_argument('--capital', type=float, default=None,
                         help='Override total capital from config.yaml (INR)')
     parser.add_argument('--tickers', nargs='+', default=None,
-                        help='Override watchlist (e.g. --tickers INFY TCS)')
+                        help='Explicit ticker list (highest priority)')
+    parser.add_argument('--universe', default=None,
+                        help='Named index: nifty50 | nifty100 | nifty500 | …')
+    parser.add_argument('--csv', default=None, dest='csv_path',
+                        help='Path to CSV file with a Symbol column')
     parser.add_argument('--start', default=None,
                         help='Backtest start date YYYY-MM-DD')
     parser.add_argument('--end', default=None,
                         help='Backtest end date YYYY-MM-DD')
+    parser.add_argument('--list-universes', action='store_true',
+                        help='Show all available universe options and exit')
     args = parser.parse_args()
+
+    if args.list_universes:
+        from agents.universe_loader import UniverseLoader
+        UniverseLoader(BASE_DIR).describe()
+        sys.exit(0)
 
     print(f"{'═'*70}")
     print(f"  SwingTradeIQ  ·  NSE Swing Trading System  ·  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"  IBS India MBA — Advanced Business Analytics")
     print(f"{'═'*70}")
 
-    cfg       = load_config(args.capital)
-    watchlist = args.tickers or default_watchlist(cfg)
-    capital   = cfg['portfolio']['total_capital']
+    cfg = load_config(args.capital)
+    try:
+        watchlist = resolve_watchlist(
+            cfg,
+            tickers  = args.tickers,
+            universe = args.universe,
+            csv_path = args.csv_path,
+        )
+    except (FileNotFoundError, ValueError) as e:
+        print(f"\nERROR resolving universe:\n  {e}")
+        sys.exit(1)
+    capital = cfg['portfolio']['total_capital']
 
+    src = (f"--tickers"           if args.tickers  else
+           f"--universe {args.universe}" if args.universe else
+           f"--csv {args.csv_path}"      if args.csv_path else
+           f"config.yaml ({cfg.get('watchlist',{}).get('universe','nifty50')})")
     print(f"  Mode      : {args.mode}")
     print(f"  Capital   : ₹{capital:,.0f}")
-    print(f"  Watchlist : {watchlist}")
+    print(f"  Universe  : {src}  →  {len(watchlist)} tickers"
+          + (f"  [{', '.join(watchlist[:5])}{'…' if len(watchlist)>5 else ''}]" if watchlist else ""))
 
     if args.mode in ('scan', 'review'):
         mode_scan(cfg, watchlist)
